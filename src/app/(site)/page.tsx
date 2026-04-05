@@ -6,7 +6,6 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { StatsSection } from "@/components/sections/StatsSection";
-import { BlogSection } from "@/components/sections/BlogSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function HomePage() {
@@ -27,10 +26,7 @@ export default function HomePage() {
       {/* 5 — Live GitHub stats */}
       <StatsSection />
 
-      {/* 6 — Latest blog posts */}
-      <BlogSection />
-
-      {/* 7 — Contact + resume */}
+      {/* 6 — Contact + resume */}
       <ContactSection />
     </>
   );

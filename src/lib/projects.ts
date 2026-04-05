@@ -12,7 +12,6 @@ export const projects: Project[] = [
       "A Kanban-style job application tracker with authentication, a PostgreSQL database, " +
       "and real-time status updates. Built to solve my own problem during the job search.",
     cover: "/images/projects/job-tracker.png",
-    url: "https://job-tracker.vercel.app",
     repo: "https://github.com/Mackintac/job-tracker",
     tech: ["Next.js", "Clerk", "Prisma", "PostgreSQL", "Tailwind", "shadcn/ui"],
     featured: true,
@@ -27,7 +26,6 @@ export const projects: Project[] = [
       "A React + Vite tool for visually composing and testing API requests. " +
       "Integrated Claude to explain responses, suggest fixes, and auto-generate test cases.",
     cover: "/images/projects/ai-api-tester.png",
-    url: "https://ai-api-tester.vercel.app",
     repo: "https://github.com/Mackintac/ai-api-tester",
     tech: ["React", "TypeScript", "Vite", "Monaco Editor", "Anthropic API", "Zustand"],
     featured: true,
@@ -37,15 +35,16 @@ export const projects: Project[] = [
   {
     slug: "dice-duel",
     title: "Dice Roll Duel",
-    tagline: "Real-time multiplayer dice game.",
+    tagline: "Real-time 1v1 ranked dice game with matchmaking and ELO.",
     description:
-      "A fast-paced browser game where players roll dice in real time. " +
-      "Focused on snappy interactions and delightful animations.",
+      "Two players queue up, get paired live, and battle in a best-of-3 match. " +
+      "Features real-time matchmaking via Socket.io, an ELO ranking system, " +
+      "leaderboards, player profiles, and auth via Google OAuth and email/password.",
     cover: "/images/projects/dice-duel.png",
-    url: "https://dice-duel.vercel.app",
-    repo: "https://github.com/Mackintac/dice-duel",
-    tech: ["React", "TypeScript", "Framer Motion"],
-    featured: false,
+    url: "https://dicerollduel.com",
+    repo: "https://github.com/Mackintac/Dice-Roll-Duel-v2",
+    tech: ["Next.js", "TypeScript", "Socket.io", "PostgreSQL", "Prisma", "NextAuth", "Tailwind CSS", "Docker"],
+    featured: true,
     order: 3,
     hasCaseStudy: false,
   },

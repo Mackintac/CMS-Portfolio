@@ -56,7 +56,7 @@ export function Navbar() {
           href="/"
           className="font-display text-lg font-semibold tracking-tight hover:opacity-80 transition-opacity"
         >
-          YN<span className="text-accent">.</span>
+          MGR<span className="text-accent">.</span>
         </Link>
 
         {/* Nav links — hidden on mobile */}

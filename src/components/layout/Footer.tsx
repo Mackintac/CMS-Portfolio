@@ -8,9 +8,9 @@ import { useUIStore } from "@/store/ui";
 import { cn } from "@/lib/utils";
 
 const SOCIAL = [
-  { label: "GitHub",   href: "https://github.com/yourusername",          icon: Github },
-  { label: "LinkedIn", href: "https://linkedin.com/in/yourprofile",       icon: Linkedin },
-  { label: "Email",    href: "mailto:hello@yourportfolio.dev",            icon: Mail },
+  { label: "GitHub",   href: "https://github.com/Mackintac",                                  icon: Github },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/mackenzie-graungaard-robinson/", icon: Linkedin },
+  { label: "Email",    href: "mailto:mackgr.dev@gmail.com",                               icon: Mail },
 ];
 
 const LINKS = [
@@ -30,10 +30,10 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-3">
             <Link href="/" className="font-display text-lg font-semibold tracking-tight">
-              YN<span className="text-accent">.</span>
+              MGR<span className="text-accent">.</span>
             </Link>
             <p className="max-w-xs text-sm text-muted-foreground">
-              Full-stack developer building thoughtful web apps and AI tools.
+              Full-stack developer building fast, delightful web experiences.
             </p>
             {/* CLI hint */}
             <button
@@ -93,7 +93,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row">
-          <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Mack Graungaard-Robinson. All rights reserved.</p>
           <p className="font-mono">
             Built with Next.js · Deployed on Vercel
           </p>

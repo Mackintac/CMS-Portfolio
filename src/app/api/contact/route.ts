@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
 
     await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",   // replace with your verified domain
-      to: ["hello@yourportfolio.dev"],
+      to: ["mackgr.dev@gmail.com"],
       reply_to: email,
       subject: `Portfolio message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,

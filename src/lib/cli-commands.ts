@@ -32,11 +32,11 @@ export const commands: Record<string, CLICommand> = {
     name: "whoami",
     description: "About the developer",
     handler: () => [
-      "Your Name",
-      "Full-Stack Developer — React · TypeScript · AI",
-      "Location: Barrie, Ontario, Canada",
-      "Open to: Senior Frontend / Full-Stack roles",
-      "Contact: hello@yourportfolio.dev",
+      "Mack Graungaard-Robinson",
+      "Full-Stack Developer — React · Next.js · TypeScript",
+      "Location: Ontario, Canada",
+      "Open to: Full-Stack / Frontend roles",
+      "Contact: mackgr.dev@gmail.com",
     ],
   },
 

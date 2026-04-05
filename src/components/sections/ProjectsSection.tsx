@@ -13,12 +13,12 @@ import {
   staggerContainer,
   staggerItem,
 } from "@/hooks/useReveal";
-import { projects } from "@/lib/projects";
+import { visibleProjects } from "@/lib/projects";
 import type { Project } from "@/types";
 
 // ─── Sorted data ─────────────────────────────────────────────────────────────
-const sorted = [...projects].sort((a, b) => a.order - b.order);
-const featured = sorted.filter((p) => p.featured);
+const featured = visibleProjects.filter((p) => p.featured);
+const sorted = visibleProjects;
 const rest = sorted.filter((p) => !p.featured);
 
 // ─── Cover image area ─────────────────────────────────────────────────────────

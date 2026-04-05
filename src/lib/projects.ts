@@ -14,9 +14,10 @@ export const projects: Project[] = [
     cover: "/images/projects/job-tracker.png",
     repo: "https://github.com/Mackintac/job-tracker",
     tech: ["Next.js", "Clerk", "Prisma", "PostgreSQL", "Tailwind", "shadcn/ui"],
-    featured: true,
+    featured: false,
+    hidden: true,
     order: 1,
-    hasCaseStudy: true,
+    hasCaseStudy: false,
   },
   {
     slug: "ai-api-tester",
@@ -28,9 +29,26 @@ export const projects: Project[] = [
     cover: "/images/projects/ai-api-tester.png",
     repo: "https://github.com/Mackintac/ai-api-tester",
     tech: ["React", "TypeScript", "Vite", "Monaco Editor", "Anthropic API", "Zustand"],
+    featured: false,
+    hidden: true,
+    order: 2,
+    hasCaseStudy: false,
+  },
+  {
+    slug: "barrie-slippi-leaderboard",
+    title: "Barrie Slippi Leaderboard",
+    tagline: "Regional ranked leaderboard for the Barrie Melee community.",
+    description:
+      "A live leaderboard for Barrie, Ontario's Super Smash Bros. Melee scene. " +
+      "A cron job pulls player connect codes from a Google Sheet, fetches stats from the Slippi API, " +
+      "and writes results to JSON. The React frontend displays live regional rankings.",
+    cover: "/images/projects/barrie-slippi.png",
+    url: "https://mackintac.github.io/BarrieSlippiLeaderboard/#/",
+    repo: "https://github.com/Mackintac/BarrieSlippiLeaderboard",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Webpack", "Google Sheets API", "GitHub Pages"],
     featured: true,
     order: 2,
-    hasCaseStudy: true,
+    hasCaseStudy: false,
   },
   {
     slug: "dice-duel",
@@ -64,9 +82,11 @@ export const projects: Project[] = [
   },
 ];
 
-export const featuredProjects = projects
-  .filter((p) => p.featured)
+export const visibleProjects = projects
+  .filter((p) => !p.hidden)
   .sort((a, b) => a.order - b.order);
+
+export const featuredProjects = visibleProjects.filter((p) => p.featured);
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);

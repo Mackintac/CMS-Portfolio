@@ -21,6 +21,8 @@ export interface Project {
   order: number;
   /** MDX case study exists */
   hasCaseStudy: boolean;
+  /** Hide from the projects section (e.g. work in progress) */
+  hidden?: boolean;
 }
 
 // ─── Blog ────────────────────────────────────────────────────────────────────

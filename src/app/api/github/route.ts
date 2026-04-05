@@ -4,7 +4,7 @@
 import { NextResponse } from "next/server";
 import type { GitHubStats } from "@/types";
 
-const GITHUB_USERNAME = process.env.NEXT_PUBLIC_GITHUB_USERNAME ?? "yourusername";
+const GITHUB_USERNAME = process.env.NEXT_PUBLIC_GITHUB_USERNAME ?? "Mackintac";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // optional but avoids rate limits
 
 const headers: HeadersInit = {

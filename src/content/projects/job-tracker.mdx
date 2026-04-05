@@ -1,0 +1,59 @@
+---
+title: "Job Application Tracker"
+tagline: "Full-stack Kanban app to manage your entire job hunt"
+publishedAt: "2024-03-01"
+tech: ["Next.js 14", "Clerk", "Prisma", "PostgreSQL", "Tailwind CSS", "shadcn/ui", "Vercel"]
+liveUrl: "https://job-tracker.vercel.app"
+repoUrl: "https://github.com/yourusername/job-tracker"
+cover: "/images/projects/job-tracker.png"
+---
+
+## The problem
+
+Tracking 30+ job applications across spreadsheets, emails, and browser tabs is chaos.
+I needed one place to move applications through stages, attach notes, and see my pipeline at a glance.
+Nothing free did exactly what I wanted — so I built it.
+
+## Architecture decisions
+
+### Auth with Clerk
+I chose Clerk over NextAuth for this project because I wanted to move fast without managing
+password hashing, session tokens, and OAuth provider configs myself. Clerk's pre-built
+`<UserButton />` and middleware integration meant auth was solid in half a day.
+
+**Trade-off:** Vendor lock-in and a free-tier limit on MAUs. For a personal tool this is fine;
+for a SaaS product I'd evaluate more carefully.
+
+### Prisma + PostgreSQL on Supabase
+The schema is simple — `User → Application → Note → StatusHistory` — but I wanted type-safe
+queries without raw SQL. Prisma's schema-first workflow and generated client made refactoring
+painless when I added the status history table mid-build.
+
+```prisma
+model Application {
+  id          String   @id @default(cuid())
+  userId      String
+  company     String
+  role        String
+  status      Status   @default(APPLIED)
+  appliedAt   DateTime @default(now())
+  notes       Note[]
+  history     StatusHistory[]
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+```
+
+### Kanban with optimistic updates
+The drag-and-drop board uses `@dnd-kit` with optimistic UI — the card moves instantly in the
+client, then a `PATCH /api/applications/:id` call syncs the server. If the request fails,
+I revert via a `useReducer` snapshot. This keeps the UI snappy even on slow connections.
+
+## What I'd do differently
+
+- **Row-level security in Postgres** instead of checking `userId` in every API handler.
+- **Infinite scroll** on the list view — loading all applications up front doesn't scale.
+- **Email reminders** via Resend when an application has been idle for 14 days.
+
+## Results
+
+Built and shipped in ~3 weeks of evenings. Currently tracking my own job search with it.

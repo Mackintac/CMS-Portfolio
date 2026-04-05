@@ -1,10 +1,17 @@
 "use client";
 // src/components/sections/HeroSection.tsx
-// ─── TODO: Replace placeholder with React Three Fiber particle scene ──────────
 
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
+
+// Dynamically import so Three.js never runs on the server
+const ParticleField = dynamic(
+  () => import("@/components/3d/ParticleField").then((m) => m.ParticleField),
+  { ssr: false },
+);
 
 export function HeroSection() {
   return (
@@ -12,8 +19,14 @@ export function HeroSection() {
       id="hero"
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden grain"
     >
-      {/* TODO: <ParticleField /> — React Three Fiber canvas goes here */}
-      {/* Gradient backdrop placeholder */}
+      {/* ── Particle field — absolute, behind everything ── */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Suspense fallback={null}>
+          <ParticleField />
+        </Suspense>
+      </div>
+
+      {/* Radial gradient backdrop — layers on top of particles */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,hsl(var(--glow-1)/0.15),transparent)]" />
 
       {/* Content */}

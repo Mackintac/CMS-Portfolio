@@ -10,7 +10,7 @@ import '@/app/globals.css';
 // ─── Metadata ────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://yourportfolio.dev',
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://mackgr.dev',
   ),
   title: {
     default: 'Mack Graungaard-Robinson — Full-Stack Developer',

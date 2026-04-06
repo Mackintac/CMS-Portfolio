@@ -30,8 +30,6 @@ export const skills: Skill[] = [
 
   // AI
   { name: "Claude API",     category: "ai",        level: 4 },
-  { name: "LangChain",      category: "ai",        level: 3 },
-  { name: "RAG",            category: "ai",        level: 3 },
 
   // Tooling
   { name: "Vite",           category: "tooling",   level: 4 },

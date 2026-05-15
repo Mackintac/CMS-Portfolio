@@ -5,6 +5,32 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    slug: "didactarc",
+    title: "DidactArc",
+    tagline: "AI-guided self-study tracker with a knowledge-decay model and Claude-powered tutor.",
+    description:
+      "A learning PWA that scores your proficiency 1–10 across academic subjects and decays it over time so you know what's ready for review. " +
+      "Claude generates topic lists and study paths, a per-subject streaming tutor answers questions in context of your progress, " +
+      "and a Pomodoro timer logs focused sessions to a 90-day heatmap. Stripe-backed Pro tier and offline support via Serwist.",
+    cover: "",
+    url: "https://didactarc.dev",
+    tech: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "NextAuth",
+      "Anthropic API",
+      "Stripe",
+      "Tailwind CSS",
+      "PWA",
+    ],
+    featured: true,
+    order: 1,
+    hasCaseStudy: false,
+  },
+  {
     slug: "job-tracker",
     title: "Job Application Tracker",
     tagline: "Full-stack app to manage your entire job hunt.",
